@@ -20,16 +20,16 @@ pub fn hex_to_base64(hex: String) -> String {
 pub fn fixed_xor(str_a: String, str_b: String) -> String {
 
     let buffer_a = match hex::decode(str_a) {
-		Ok(bytes) => bytes,
-		Err(_) => panic!("Could not decode"),
+        Ok(bytes) => bytes,
+        Err(_) => panic!("Could not decode"),
     };
 
     let buffer_b = match hex::decode(str_b) {
-		Ok(bytes) => bytes,
-		Err(_) => panic!("Could not decode"),
+        Ok(bytes) => bytes,
+        Err(_) => panic!("Could not decode"),
     };
 
-	let key_iter = buffer_b.iter().cycle();
-	let res : Vec<u8> = buffer_a.iter().zip(key_iter).map(|(&a, b)| a ^ b ).collect();
+    let key_iter = buffer_b.iter().cycle();
+    let res : Vec<u8> = buffer_a.iter().zip(key_iter).map(|(&a, b)| a ^ b ).collect();
     hex::encode(res)
 }

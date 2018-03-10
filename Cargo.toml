@@ -1,0 +1,8 @@
+[package]
+name = "cryptopals_challenges"
+version = "0.1.0"
+authors = ["Kostantinos Lountzis <loukwn@gmail.com>"]
+
+[dependencies]
+
+base64 = "0.9.0"
